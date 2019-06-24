@@ -7,7 +7,8 @@ export default class Movie extends Component {
     super(props);
     this.state = {
       movie: null,
-      tmdb: null
+      tmdb: null,
+      plot: null
     };
   }
 
@@ -37,7 +38,7 @@ export default class Movie extends Component {
       .get(`https://api.themoviedb.org/3/search/movie?api_key=9482c0d614f49577f16fad8bd7b1d64f&language=en-US&query=${title}&page=1&include_adult=false`)
       .then(response => {
         this.setState(() => ({ tmdb: response.data.results[0].poster_path }));
-       
+        this.setState(() => ({ plot: response.data.results[0].overview }));
         
       })
       .catch(error => {
@@ -61,9 +62,8 @@ export default class Movie extends Component {
       return <div>Loading movie information...</div>;
     }
 
-    const { title, director, metascore, stars } = this.state.movie;
     return (
-      <MovieCard movie={this.state.movie} imgSrc={this.state.tmdb} />
+      <MovieCard movie={this.state.movie} imgSrc={this.state.tmdb} plot={this.state.plot} />
     );
   }
 }

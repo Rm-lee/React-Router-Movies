@@ -7,15 +7,26 @@ body {
 
 .movie-card {
   background-color: #fff;
+  color:rgb(49, 49, 49);
   border: 0;
   box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
     0 2px 4px rgba(0, 0, 0, 0.24);
-  padding: 1rem;
+  padding: 1.5rem;
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  text-align: left;
+  width:60%;
+  display:flex;
+  justify-content: space-around;
 }
-
+.plot{
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-end;
+  width:50%;
+  font-size:1.2rem;
+}
 .movie-director {
   padding: 4px 0;
   font-size: 0.8rem;
@@ -73,7 +84,7 @@ body {
 .links{
   text-decoration: none;
 }
-.movie-card{
-  text-align: center;
+.app-container{
+  
 }
 
